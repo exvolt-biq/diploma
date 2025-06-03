@@ -1,0 +1,9 @@
+RewriteEngine On
+
+ErrorDocument 404 /index404.php
+ErrorDocument 500 /index404.php
+
+RewriteCond %{REQUEST_URI} !-f
+RewriteCond %{REQUEST_URI} !-d
+RewriteCond %{REQUEST_URI} !-l
+RewriteRule ^(.*\.php)$ entry.php [QSA,L]
