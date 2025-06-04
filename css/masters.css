@@ -76,15 +76,26 @@ input::placeholder {
   display: flex;
 }
 .reg{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   display: inline-block;
   border: 1px solid gray;
   padding: 25px 25px 3px 25px ;
   border-radius: 16px;
   max-width: 450px;
-  margin: auto auto 0px auto;
+  margin: auto auto 0px auto; */
+
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid gray;
+  padding: 25px 25px 10px 25px;
+  border-radius: 16px;
+  max-width: 450px;
+  margin: 0 auto;
 }
+
 .reg-input{
   height:30px;
   width:382.16px;
@@ -115,12 +126,25 @@ input::placeholder {
   margin-bottom: 25px;
 }
 .reg-logon a{
+  display: inline-block;
+    color: lightgray;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    background: white;
+    transform: translateY(85%);
+
+
   color: lightgray; text-decoration: none;
 }
 .reg-logon a:hover{
   color: gray; text-decoration: none;
 }
 .reg-logon{
+ margin-top: auto;
+
+
   color: lightgray;
   font-size: 0.6em;
   text-align: right;
@@ -130,4 +154,120 @@ small{
   color: #AD1A1A;
   font-size: 0.5em;
   text-align: right;
+}
+
+
+
+
+
+
+.header-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin: 20px auto;
+  max-width: fit-content;
+}
+
+.header-button button {
+  position: relative;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+  min-width: 140px;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Главная - Мятная свежесть */
+.header-home {
+  background: linear-gradient(135deg, #00d2b5 0%, #00b894 100%);
+  box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3);
+}
+
+.header-home:hover {
+  animation: floatBounce 2s infinite ease-in-out;
+}
+
+/* Регистрация - Лавандовый рассвет */
+.header-registration {
+  background: linear-gradient(135deg, #a55eea 0%, #8854d0 100%);
+  box-shadow: 0 4px 12px rgba(165, 94, 234, 0.3);
+}
+
+.header-registration:hover {
+  animation: colorPulse 2s infinite alternate;
+}
+
+/* Вход - Морская волна */
+.header-login {
+  background: linear-gradient(135deg, #2980b9 0%, #2c3e50 100%);
+  box-shadow: 0 4px 12px rgba(41, 128, 185, 0.3);
+}
+
+.header-login:hover {
+  animation: waveRipple 1.5s infinite linear;
+}
+
+/* Выход - Закатный градиент */
+.header-exit {
+  background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+  box-shadow: 0 4px 12px rgba(255, 118, 117, 0.3);
+}
+
+.header-exit:hover {
+  animation: flameFlicker 1s infinite alternate;
+}
+
+/* Уникальные анимации */
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes colorPulse {
+  0% { filter: brightness(100%); }
+  100% { filter: brightness(120%); }
+}
+
+@keyframes waveRipple {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes flameFlicker {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
+
+/* Эффект блесток при наведении */
+button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle,
+    rgba(255,255,255,0.6) 0%,
+    rgba(255,255,255,0) 70%);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.6s, opacity 0.6s;
+}
+
+button:hover::after {
+  transform: scale(1);
+  opacity: 0.4;
 }

@@ -25,9 +25,9 @@
       вы согласны на персональные данные?
     </div>
     <button class="reg-button" type="button" name="button" @click="functionRequest">Зарегистрироваться</button>
-    {{name + isNameValid()}}
+    <!-- {{name + isNameValid()}} -->
     <div class="reg-logon">
-      <a href="/app/logs.php"> Если вы уже зарегистрированы то Войти </a>
+      <a href="/app/logs.php">Если вы уже зарегистрированы то Войти</a>
     </div>
   </div>
 </div>
